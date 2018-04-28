@@ -1,0 +1,32 @@
+
+	<div class="container color-dark">
+	<div class="col">
+		<p> CUSTOMERS NAME REGISTRATION</p>
+	</div>
+
+	
+	<div class="col">
+		<p> NO. OF CUSTOMERS CURRENTLY IN THE RESTAURANT({{itemCount}})<br>
+		<br>
+		click name of the customer to log him out of the system </p>
+	</div>
+</div>
+	
+<div class="container color-light" [@goals]="goals.length">
+	<div class="col">
+		<p class= "sm">PLEASE CUSTOMER ENTER YOUR NAME HERE</p>
+		<form>
+			<input required type="text" class="txt" name ="item" placeholder="type here..."[(ngModel)]="goalText">
+
+			<input type="submit" class="btn" value="{{btnText}}" (click)="addItem()">
+		</form>
+	</div>
+
+
+	<div class="col">
+		<p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)">
+  {{ goal }}
+</p>
+	</div>
+</div>
+	
